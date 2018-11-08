@@ -8,8 +8,8 @@ Pod::Spec.new do |s|
   s.authors  = { 'Mattt Thompson' => 'm@mattt.me' }
   s.source   = { :git => 'https://github.com/20427740/TalkfunLogger.git', :tag => s.version, :submodules => true }
   s.requires_arc = true
-  s.source_files  =        "SDK/*.{h,m}"
-  s.vendored_libraries =   'SDK/libTalkfunLogger.a'
+  s.source_files  =        "SDK/*.h"
+  s.vendored_libraries =  'SDK/libTalkfunLogger.a'
   s.ios.deployment_target = "8.0"
   
    
