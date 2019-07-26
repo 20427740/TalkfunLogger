@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name     = "TalkfunLogger"
-  s.version  = "1.4.5"
+  s.version  = "1.4.6"
   s.license  = "MIT"
   s.summary  = "A deNews Channel style.dddd"
   s.homepage = "https://github.com/20427740/TalkfunLogger"
