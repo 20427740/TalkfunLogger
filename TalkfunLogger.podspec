@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name     = "TalkfunLogger"
-  s.version  = "1.4.1"
+  s.version  = "1.4.2"
   s.license  = "MIT"
   s.summary  = "A deNews Channel style.dddd"
   s.homepage = "https://github.com/20427740/TalkfunLogger"
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   
   s.ios.deployment_target = "8.0"
   s.vendored_frameworks = 'SDK/IJKMediaFramework.framework'
-  s.vendored_libraries =  'SDK/libTalkfunSDK.a'
+ 
 
   
   
