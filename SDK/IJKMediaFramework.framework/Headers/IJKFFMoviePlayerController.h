@@ -1,7 +1,6 @@
 /*
  * IJKFFMoviePlayerController.h
  *
- * Copyright (c) 2013 Bilibili
  * Copyright (c) 2013 Zhang Rui <bbcallen@gmail.com>
  *
  * This file is part of ijkPlayer.
@@ -24,7 +23,6 @@
 #import "IJKMediaPlayback.h"
 #import "IJKFFMonitor.h"
 #import "IJKFFOptions.h"
-#import "IJKSDLGLViewProtocol.h"
 
 // media meta
 #define k_IJKM_KEY_FORMAT         @"format"
@@ -78,26 +76,20 @@ typedef enum IJKLogLevel {
 - (id)initWithContentURLString:(NSString *)aUrlString
                    withOptions:(IJKFFOptions *)options;
 
-- (id)initWithMoreContent:(NSURL *)aUrl
-             withOptions:(IJKFFOptions *)options
-              withGLView:(UIView<IJKSDLGLViewProtocol> *)glView;
-
-- (id)initWithMoreContentString:(NSString *)aUrlString
-                 withOptions:(IJKFFOptions *)options
-                  withGLView:(UIView<IJKSDLGLViewProtocol> *)glView;
-
 - (void)prepareToPlay;
 - (void)play;
 - (void)pause;
 - (void)stop;
 - (BOOL)isPlaying;
-- (int64_t)trafficStatistic;
-- (float)dropFrameRate;
 
 - (void)setPauseInBackground:(BOOL)pause;
 - (BOOL)isVideoToolboxOpen;
-
-- (void)setHudValue:(NSString *)value forKey:(NSString *)key;
+- (long long)videoCachedPackets;
+- (long long)audioCachedPackets;
+- (long long)videoCachedBytes;
+- (long long)audioCachedBytes;
+- (long long)videoCachedDuration;
+- (long long)audioCachedDuration;
 
 + (void)setLogReport:(BOOL)preferLogReport;
 + (void)setLogLevel:(IJKLogLevel)logLevel;
@@ -108,6 +100,7 @@ typedef enum IJKLogLevel {
 @property(nonatomic, readonly) CGFloat fpsInMeta;
 @property(nonatomic, readonly) CGFloat fpsAtOutput;
 @property(nonatomic) BOOL shouldShowHudView;
+@property(nonatomic, readonly) CGFloat tcpSpeed;//bytes
 
 - (void)setOptionValue:(NSString *)value
                 forKey:(NSString *)key
